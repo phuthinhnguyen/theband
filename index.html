@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .menu{
+            position: sticky;
+            top: 0;
+        }
+        ul{ 
+            position: absolute;    
+            width: 100%;
+            list-style-type: none;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            float: left;
+        }
+        a{  
+            display: block;
+            text-decoration: none;
+            padding: 15px;
+            color: white;
+        }
+        li:hover{
+            background-color: white;
+        }
+        li:hover a{
+            color: black;
+        }
+        .parent{
+            display: none;
+            width: 160px;
+            position: absolute;
+            background-color: white;
+        }
+        .parent a{
+            display: block;
+            padding: 15px;
+            text-align: left;
+        
+        }
+        .more:hover .parent{
+            display: block;
+            z-index: 1;
+        }
+        .parent a:hover{
+            background-color: lightgray;
+        }
+        .img{
+            position: relative; 
+            top: 45px;
+            width: 100%;
+            z-index: -1;
+        }
+        .img img{
+            width: 100%;
+            height: auto;
+        }
+        .img-text{
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            text-align: center;
+        }
+        .band{
+            position: relative;
+            margin: auto;
+            padding: 100px 15px;
+        }
+        .band h3{
+            text-align: center;
+            font-size: 50px;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 10px
+        }
+        .band .welove{
+            text-align: center;
+            color: gray;
+            font-style: italic;
+        }
+        .band .wehave{
+            text-align: justify;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            line-height: 25px;
+            max-width: 800px;
+            margin: auto;
+
+        }
+        .band-img{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            column-gap: 50px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+        .band-img p{
+           text-align: center;
+        }
+        .band-img img{
+            width: 100%;
+            height: auto;
+        }
+        @media only screen and (max-width:600px){
+            .band-img {
+                flex-direction: column;
+            }
+        }
+        .tourdates{
+            margin-top: 50px;
+            background-color: black;
+            padding: 50px 10px;
+            
+        }
+        .tourdates h3{
+            text-align: center;
+            font-size: 30px;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 10px;
+            color: white;
+        }
+        .tourdates .remember{
+            text-align: center;
+            color: gray;
+            font-style: italic
+        }
+        .tourdates .tourdates-item1{
+            background-color: white;
+            max-width: 800px;
+            margin: auto;
+           
+        }
+        .tourdates .tourdates-item1 div{
+       
+            border: thin solid gray;
+            padding: 12px;
+        }
+        .tourdates .tourdates-item1 .month {
+            display: inline;
+            color: gray;
+            font-size: medium;
+        }
+        .soldout{
+            display: inline;
+            color: white;
+            background-color: orangered;
+            padding: 3px;
+            margin-left: 10px;
+        }
+        .three{
+            float: right;
+            padding: 8px;
+            background-color: black;
+            border-radius: 50%;
+            color: white;
+            margin: 0;
+           
+        }
+        .tourdates-item2{
+            margin-top: 20px;
+            clear: right;
+            display: flex;
+            flex-flow: row;
+            column-gap: 20px;
+            justify-content: center;
+            align-items: center;
+       
+        }
+        .tourdates-item2 div{
+            background-color: white;
+            width: 250px;
+            padding-bottom: 20px;
+
+        }
+        .tourdates-item2 img{
+            height: auto;
+            width: 100%;
+        }
+
+        @media only screen and (max-width:600px){
+            .tourdates-item2{
+                flex-direction: column;
+                row-gap: 10px;
+            }
+        }
+        .tourdates-item2 h5{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15px;
+            margin-left: 15px;
+        }
+        .tourdates-item2 p{
+            margin-left: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .tourdates-item2-text{
+           font-family:'Times New Roman', Times, serif;
+           font-weight: bold;
+        }
+        .tourdates-item2 a{
+            display: inline;
+            color: white;
+            background-color: black;
+            padding: 10px;
+            margin: 15px 15px;
+        }
+        .contact{
+            padding: 50px;
+            
+        }
+        .contact h3{
+            text-align: center;
+            font-size: 50px;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 10px
+        }
+        .contact h4{
+            text-align: center;
+            color: gray;
+            font-style: italic;
+            font-weight: normal;
+        }
+        .contact-item1{
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+        }
+        .contact a{
+            display: inline;
+            color:  white;
+            background-color: black;
+            padding: 10px;
+            float: right;
+        }
+        .chicago{
+            width: 400px;
+          
+        }
+        .input{
+           
+            max-width: 400px;
+        }
+        .name{
+            margin: 0;
+            max-width: 180px;
+           height: 50%;
+           margin-bottom: 10px;
+        }
+        .email{ 
+         
+          height: 50%;
+    
+          max-width: 180px;
+        
+        }
+        .message{   
+            display: block;
+            max-width:400px;
+            height: 50%;
+        }
+        @media only screen and (max-width:600px){
+            .contact-item1{
+                flex-direction: column;
+            }
+        }
+        .map img{
+            height: auto;
+            width: 100%;
+        }
+        .footer{
+            margin: 50px auto;
+            text-align: center;
+        }
+        .footer img{
+            height: 20px;
+            width: 20px;
+           
+        }
+        .footer a{
+            display: inline;
+            margin: 0;
+            padding: 5px;
+            color: gray;
+            text-decoration: underline;
+        }
+        .footer p{
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">BAND</a></li>
+            <li><a href="">TOUR</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li class="more"><a href="">MORE</a>
+                <div class="parent">
+                    <a href="">Merchandise</a>
+                    <a href="">Extras</a>
+                    <a href="">Media</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="img">
+            <img src="chicago.jpg" alt="">
+            <div class="img-text">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago - A night we won't forget.</p>
+            </div>       
+    </div>
+    <div class="band">
+        <h3>THE BAND</h3>
+        <p class="welove">We love music</p>
+        <p class="wehave">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="band-img">
+        <div class="band-img-item1">
+            <p>Name</p>
+            <img src="bandmember.jpg" alt="" >
+        </div>
+        <div class="band-img-item1">
+            <p>Name</p>
+            <img src="bandmember.jpg" alt="" >
+        </div>
+        <div class="band-img-item1">
+            <p>Name</p>
+            <img src="bandmember.jpg" alt="" >
+        </div>
+    </div>
+    <div class="tourdates">
+        <h3>TOUR DATES</h3>
+        <p class="remember">Remember to book your tickets!</p>
+       <div class="tourdates-item1">
+            <div><p class="month">September</p><p class="soldout">Sold out</p></div>
+            <div><p class="month">October</p><p class="soldout">Sold out</p></div>
+            <div><p class="month">November</p><p class="three">3</p></div> 
+       </div>
+       <div class="tourdates-item2">
+            <div>
+                <img src="newyork.jpg" alt="">
+                <h5>New York</h5>
+                <p>Fri 27 Nov 2016</p>
+                <p class="tourdates-item2-text">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div>
+                <img src="paris.jpg" alt="">
+                <h5>Paris</h5>
+                <p>Sat 28 Nov 2016</p>
+                <p class="tourdates-item2-text">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div>
+                <img src="sanfran.jpg" alt="">
+                <h5>San Francisco</h5>
+                <p>Sun 29 Nov 2016</p>
+                <p class="tourdates-item2-text">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <a href="">Buy Tickets</a>
+            </div>
+       </div>
+    </div> 
+    <div class="contact">
+        <h3>CONTACT</h3>
+        <h4>Fan? Drop a note!</h4>
+        <div class="contact-item1">
+                <div class="chicago">
+                    <p>Chicago, US</p>
+                    <p>Phone: +00 151515</p>
+                    <p>Email: mail@mail.com</p>   
+                </div>
+                <div class="input">
+                    <input class="name" type="text" placeholder="Name" size="200">
+                    <input class="email" type="text" placeholder="Email" size="200">
+                    <input class="message" type="text" placeholder="Message" size="200">
+                    <a href="">SEND</a>
+                </div>
+        </div>
+    </div>  
+    <div class="map">
+        <img src="map.jpg" alt="map">
+    </div> 
+    <div class="footer">
+        <a href=""><img src="f.png" alt=""></a>
+        <a href=""><img src="insta.png" alt=""></a>
+        <a href=""><img src="link.png" alt=""></a>
+        <a href=""><img src="twiter.png"></a>
+        <p>Powered by<a href="">w3.css</a></p>
+    </div>
+</body>
+</html>
