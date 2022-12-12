@@ -78,6 +78,7 @@
             position: relative;
             margin: auto;
             padding: 100px 15px;
+           z-index: -1;
         }
         .band h3{
             text-align: center;
@@ -107,6 +108,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 10px;
+            z-index: -1;
         }
         .band-img p{
            text-align: center;
@@ -164,11 +166,17 @@
         }
         .three{
             float: right;
-            padding: 8px;
+            width: 30px;
+            height: 30px;
             background-color: black;
             border-radius: 50%;
             color: white;
-            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
            
         }
         .tourdates-item2{
@@ -240,43 +248,52 @@
             margin: auto;
             display: flex;
             flex-direction: row;
+            column-gap: 10px;
         }
         .contact a{
-            display: inline;
             color:  white;
             background-color: black;
             padding: 10px;
+            display: block;
+            width: 65px;
+            text-align: center;
+            margin-top: 10px;
             float: right;
         }
         .chicago{
-            width: 400px;
-          
+            float: left;
+            width: 100%;
+
         }
         .input{
-           
-            max-width: 400px;
+            float: left;
+            width: 100%;
+        
         }
         .name{
-            margin: 0;
-            max-width: 180px;
-           height: 50%;
-           margin-bottom: 10px;
+          width: 48%;
+          height: 40px;
+          margin-bottom: 5px;
+          
         }
         .email{ 
+            width: 50%;
+            height: 40px;
+            float: right;
          
-          height: 50%;
-    
-          max-width: 180px;
         
         }
         .message{   
-            display: block;
-            max-width:400px;
-            height: 50%;
+            width: 100%;
+            height: 40px;
         }
         @media only screen and (max-width:600px){
             .contact-item1{
                 flex-direction: column;
+            }
+            .tourdates-item2 div{
+                width: 100%;
+                margin: 0 10px;
             }
         }
         .map img{
@@ -352,7 +369,7 @@
        <div class="tourdates-item1">
             <div><p class="month">September</p><p class="soldout">Sold out</p></div>
             <div><p class="month">October</p><p class="soldout">Sold out</p></div>
-            <div><p class="month">November</p><p class="three">3</p></div> 
+            <div><p class="month">November</p><div class="three">3</div></div> 
        </div>
        <div class="tourdates-item2">
             <div>
@@ -388,11 +405,12 @@
                     <p>Email: mail@mail.com</p>   
                 </div>
                 <div class="input">
-                    <input class="name" type="text" placeholder="Name" size="200">
-                    <input class="email" type="text" placeholder="Email" size="200">
-                    <input class="message" type="text" placeholder="Message" size="200">
+                    <input class="name" type="text" placeholder="Name">
+                    <input class="email" type="text" placeholder="Email" >
+                    <input class="message" type="text" placeholder="Message" >
                     <a href="">SEND</a>
                 </div>
+                
         </div>
     </div>  
     <div class="map">
